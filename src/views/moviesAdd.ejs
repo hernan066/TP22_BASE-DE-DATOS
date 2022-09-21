@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie add</title>
+    <link rel='stylesheet' href='/css/style.css' />
+</head>
+
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+      </figure>
+    <h1 class="titulo">Agregar Película</h1>
+    <br>
+    <section class="formulario">
+        <form action="/movies/create" method="POST" style="max-width:400px ;" novalidate>
+            
+            <label for="title">Title </label>
+            <p><input type="text" name="title" id=""  style="width: 100% ;" value="<%= locals.old && old.title %>"></p>
+            <p class="form__error"><%= locals.errors && errors.title ? errors.title.msg : null %></p>
+            
+            <label for="rating">Rating </label>
+            <p><input type="number" name="rating" id=""  style="width: 100% ;" value="<%= locals.old && old.rating %>"> </p>
+            <p class="form__error"><%= locals.errors && errors.rating ? errors.rating.msg : null %></p>
+
+            <label for="awards">Awards </label>
+            <p><input type="number" name="awards" id=""  style="width: 100% ;" value="<%= locals.old && old.awards %>"></p>
+            <p class="form__error"><%= locals.errors && errors.awards ? errors.awards.msg : null %></p>
+            
+            <label for="release_date">Release date </label>
+            <p><input type="date" name="release_date" id=""  style="width: 100% ;" value="<%= locals.old && old.release_date %>"></p>
+            <p class="form__error"><%= locals.errors && errors.release_date ? errors.release_date.msg : null %></p>
+            
+            <label for="length">Length </label>
+            <p><input type="number" name="length" id=""  style="width: 100% ;" value="<%= locals.old && old.length %>"></p>
+            <p class="form__error"><%= locals.errors && errors.length ? errors.length.msg : null %></p>
+            
+            <label for="genre">Generos</label><br>
+            <select name="genre" id="" style="width: 100% ; margin-bottom: 20px;">
+                <option value="" hidden selected>Selecciona un genero</option>
+                <% genres.forEach(genre => { %>
+                    <option value="<%= genre.id %>"><%= genre.name %> </option>
+                <% }) %>
+            </select>
+            <p class="form__error"><%= locals.errors && errors.genre ? errors.genre.msg : null %></p>
+            <br>
+            <p> <button class="botonAgregar" type="submit" style="width: 100%; padding: 7px;">Agregar</button>
+            
+            <a  class="botonVolver" href="/movies">Listado de Películas</a></p>
+        </form>
+    </section>
+    
+</body>
+
+</html>
