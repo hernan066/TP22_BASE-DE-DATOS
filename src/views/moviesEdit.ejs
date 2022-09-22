@@ -9,10 +9,11 @@
 </head>
 
 <body>
-    <figure>
-        <img src="/img/logo-DH.png" alt="Logo Digital House">
-      </figure>
-    <h1 class="titulo">Película a Editar:  <%= Movie.title %></h1>
+    <%- include ('./partials/header') %> 
+    <main>
+
+    
+    <h1 class="titulo"><%= Movie.title %></h1>
     <section class="formulario">
         <form action="/movies/update/<%= Movie.id %>?_method=PUT" method="POST" novalidate>
             
@@ -50,10 +51,11 @@
             <p> <button class="botonAgregar" type="submit" style="width: 100%;">Actualizar</button>
                 <br>
         
-            <a  class="botonVolver" href="/movies">Listado de Películas</a></p>
+          
             
         </form>
     </section>
+</main>
 </body>
 
 </html>

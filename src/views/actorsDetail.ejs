@@ -8,22 +8,24 @@
 
 </head>
 <body>
-    <figure>
-        <img src="/img/logo-DH.png" alt="Logo Digital House">
-    </figure>    
-    <h1><%= actor.last_name %>, <%= actor.first_name %> </h1>
-    <br>
-    <% if (!!actor.movies.length) { %>
-        <ul>
-            <% actor.movies.forEach(movie => { %>
-             <li><a href="/movies/detail/<%= movie.id %>"><%= movie.title %></a> </li>
-            <% }) %>
-        </ul>
-     
-    <% }else{ %>
+    <%- include ('./partials/header') %> 
+    
+    <main>
 
-        <p>El actor no tiene peliculas</p>
-    <% } %>
+        <h1><%= actor.last_name %>, <%= actor.first_name %> </h1>
+        <br>
+        <% if (!!actor.movies.length) { %>
+            <ul>
+                <% actor.movies.forEach(movie => { %>
+                 <li><a href="/movies/detail/<%= movie.id %>"><%= movie.title %></a> </li>
+                <% }) %>
+            </ul>
+         
+        <% }else{ %>
+    
+            <p>El actor no tiene peliculas</p>
+        <% } %>
+    </main>
     
     
     

@@ -9,20 +9,21 @@
 </head>
 
 <body>
-    <figure>
-        <img src="/img/logo-DH.png" alt="Logo Digital House">
-      </figure>
-    <h1>Estas seguro de querer borrar esta película: <%= Movie.title %>???</h1>
+    <%- include ('./partials/header') %> 
+    <main>
+
+    
+    <h2>Estas seguro de querer borrar esta película: <%= Movie.title %>???</h2>
     <p>
         <form action="/movies/delete/<%= Movie.id %>?_method=DELETE" method="POST">
             <br>
-            <p> <button class="botonBorrar" type="submit">Borrar la Película</button>
+            <button class="botonBorrar" type="submit">Borrar la Película</button>
             
-            <a  class="botonVolver" href="/movies">Listado de Películas</a></p>
+         
 
         </form>
     </p>
-    
+</main>
 </body>
 
 </html>

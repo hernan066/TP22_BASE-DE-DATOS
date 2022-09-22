@@ -8,13 +8,14 @@
 
 </head>
 <body>
-    <figure>
-        <img src="/img/logo-DH.png" alt="Logo Digital House">
-    </figure>    
-    <h1><%= genre.name %> </h1>
-    <br>
-    <p>NAME: <%= genre.name %> </p>
-    <p>RANKIG: <%= genre.ranking %> </p>
+    <%- include ('./partials/header') %> 
+    <main>
+
+        <h1><%= genre.name %> </h1>
+        <br>
+        <p>NAME: <%= genre.name %> </p>
+        <p>RANKIG: <%= genre.ranking %> </p>
+    </main>  
 
 </body>
 </html>

@@ -7,18 +7,20 @@
     <link rel='stylesheet' href='/css/style.css' />
 </head>
 <body>
-    <figure>
-        <img src="/img/logo-DH.png" alt="Logo Digital House">
-    </figure>
-    <h1>PELIÍCULAS ORDENADASR FECHA</h1>
+    <%- include ('./partials/header') %>
+    <main>
+
+   
+    <h1>LAS MAS NUEVAS</h1>
     <ul>
         <% for( let i = 0; i < movies.length; i++ ) { %>
         <li>
-            <a href="/movies/detail/<%=movies[i].id%>"><%= movies[i].title %> </a> <br>
-            <%= 'RELEASE DATE: ' + movies[i].release_date %> 
+            <strong> <a href="/movies/detail/<%=movies[i].id%>"><%= movies[i].title %> </a></strong> <br>
+            <%= 'Estreno: ' + moment(movies[i].release_date).format('DD-MM-YYYY') %> 
         </li>
         <% } %>
         
     </ul>
+</main>
 </body>
 </html>

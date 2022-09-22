@@ -15,7 +15,7 @@ const moviesController = {
   },
   detail: (req, res) => {
     db.Movie.findByPk(req.params.id).then((movie) => {
-      res.render("moviesDetail.ejs", { movie });
+      res.render("moviesDetail.ejs", { movie, moment });
     });
   },
   new: (req, res) => {
@@ -23,7 +23,7 @@ const moviesController = {
       order: [["release_date", "DESC"]],
       limit: 5,
     }).then((movies) => {
-      res.render("newestMovies", { movies });
+      res.render("newestMovies", { movies, moment });
     });
   },
   recomended: (req, res) => {
